@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 mongoose.set('strictQuery', false);
 
 const connectToDb = async () => {
-  const maxRetries = 5; // Maximum number of connection retries
+  const maxRetries = 2; // Maximum number of connection retries
   let currentRetry = 0;
 
   while (currentRetry < maxRetries) {
@@ -20,7 +20,7 @@ const connectToDb = async () => {
       currentRetry++;
 
       // Wait for a moment before retrying
-      await new Promise((resolve) => setTimeout(resolve, 5000)); // 5 seconds (adjust as needed)
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // 1 seconds (adjust as needed)
     }
   }
 

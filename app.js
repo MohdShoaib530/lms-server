@@ -15,18 +15,18 @@ app.use(express.urlencoded({ extended: true }));
 // Third-Party
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
 app.use(morgan('dev'));
 app.use(cookieParser());
 
-app.use((_req, res, next) => {
-  res.header('Access-Control-Allow-Origin', process.env.FRONTEND_URL);
-  res.header('Access-Control-Allow-Credentials', true);
-  next();
-});
+// app.use((_req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', process.env.FRONTEND_URL);
+//   res.header('Access-Control-Allow-Credentials', true);
+//   next();
+// });
 
 // Server Status Check Route
 app.get('/ping', (_req, res) => {

@@ -11,8 +11,7 @@ import sendEmail from '../utils/sendEmail.js';
 const cookieOptions = {
   secure: process.env.NODE_ENV === 'production' ? true : false,
   maxAge: 24 * 60 * 60 * 1000, // 7 days
-  httpOnly: true,
-  sameSite: 'None',  // Add SameSite attribute for cross-site requests
+  httpOnly: false,  // Add SameSite attribute for cross-site requests
 };
 
 /**

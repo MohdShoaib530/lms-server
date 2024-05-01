@@ -15,8 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 // Third-Party
 app.use(
   cors({
-    origin: "*",
-    credentials: false,
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
   })
 );
 app.use(morgan('dev'));

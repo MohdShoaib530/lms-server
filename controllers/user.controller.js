@@ -11,7 +11,9 @@ import sendEmail from '../utils/sendEmail.js';
 const cookieOptions = {
   secure: process.env.NODE_ENV === 'production' ? true : false,
   maxAge: 24 * 60 * 60 * 1000, // 7 days
-  httpOnly: false,  // Add SameSite attribute for cross-site requests
+  httpOnly: true,
+  sameSite: 'None',  // Add SameSite attribute for cross-site requests
+  // Add SameSite attribute for cross-site requests
 };
 
 /**
@@ -90,7 +92,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
 
   // Setting the password to undefined so it does not get sent in the response
   user.password = undefined;
-  
+
   // Setting the token in the cookie with name token along with cookieOptions
   res.cookie('token', token, cookieOptions);
 

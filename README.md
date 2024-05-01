@@ -13,7 +13,7 @@ This repository contains the client-side application for the Learning Management
 
 ## Introduction
 
-The LMS-Client project is part of a Learning Management System, utilizing Node.js and Express to create a dynamic and efficient client-side application. It is structured to provide a seamless learning experience for users.
+The lms-server project is part of a Learning Management System, utilizing Node.js and Express to create a dynamic and efficient server-side application. It is structured to provide a seamless learning experience for users.
 
 ## Technologies Used
 
